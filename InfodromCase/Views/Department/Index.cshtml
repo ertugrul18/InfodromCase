@@ -1,0 +1,19 @@
+﻿@model List<DepartmentIndexVM>
+
+<ul>
+    @foreach (var menuItem in Model)
+    {
+        <li>
+            <a href="@menuItem.Name">@menuItem.Name</a>
+            @if (menuItem.Children != null && menuItem.Children.Count > 0)
+            {
+                <ul>
+                    @foreach (var item in menuItem.Children)
+                    {
+                        @item.Name
+                    }
+                </ul>
+            }
+        </li>
+    }
+</ul>

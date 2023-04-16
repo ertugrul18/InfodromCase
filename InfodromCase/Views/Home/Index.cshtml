@@ -1,0 +1,56 @@
+﻿@model IList<HomeIndexVM>
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="container">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7 ">
+            <a asp-action="Create" asp-controller="Home" asp-area="" class="btn btn-primary mb-4 col-3">
+                <i class="bi bi-plus-lg"></i>   Personel Ekle
+            </a>
+            @foreach (var item in Model)
+            {
+                <div class="post-preview mb-5 mt-5">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body row">
+                                <div class=" col-8">
+                                    <ul>
+                                        <li>
+                                            Personel Sicil No : @item.StaffRegistrationNumber
+                                        </li>
+
+                                        <li>
+                                            Personel Adı : @item.StaffName
+                                        </li>
+                                        <li>
+                                            Personel Soyadı : @item.StaffSurname
+                                        </li>
+                                        <li>
+                                            Organizasyon Şeması Adı : @item.DepartmentName
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                                <div class="col-4" style="border-left-style:dashed">
+                                    <a asp-action="Update" asp-controller="Home" asp-area="" asp-route-id="@item.StaffId" type="button" class="btn btn-primary d-flex align-items-center justify-content-center">Güncelle</a><br>
+                                    <a asp-action="Delete" asp-controller="Home" type="button"
+                                   class="btn btn-danger d-flex align-items-center justify-content-center mt-2"
+                                   asp-route-id="@item.StaffId" asp-area="">
+                                        Sil
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,69 @@
+﻿@model StaffUpdateVM
+
+<div id="main">
+
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title d-flex justify-content-center">Personel Güncelle</h4>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+                <form class="form form-horizontal" method="post" asp-action="Update" asp-controller="Home" asp-area="" enctype="multipart/form-data">
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="form-group has-icon-left ">,
+                                <input type="text" class="form-control" id="first-name-icon" asp-for="@Model.StaffId" hidden>
+
+                                <label for="first-name-icon">Personel sicil No</label>
+
+                                <div class="position-relative">
+                                    <input type="text" class="form-control" placeholder="Personel Sicil No" id="first-name-icon" asp-for="@Model.StaffRegistrationNumber">
+                                    <div class="form-control-icon">
+                                        <i class="bi bi-blockquote-left"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group has-icon-left ">
+                                <label for="first-name-icon">Personel Adı</label>
+
+                                <div class="position-relative">
+                                    <input type="text" class="form-control" placeholder="Personel Adı" id="first-name-icon" asp-for="@Model.StaffName">
+                                    <div class="form-control-icon">
+                                        <i class="bi bi-blockquote-left"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group has-icon-left ">
+                                <label for="first-name-icon">Personel Soyadı</label>
+
+                                <div class="position-relative">
+                                    <input type="text" class="form-control" placeholder="Personel Soyadı" id="first-name-icon" asp-for="@Model.StaffSurname">
+                                    <div class="form-control-icon">
+                                        <i class="bi bi-blockquote-left"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="input-group  mb-3">
+                                <label for="first-name-icon">Departman Seçiniz </label><br />
+                                <select id="select" asp-for="StaffDepartmentId" asp-items=@Model.departmentDropodowns>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary me-1 mb-1">
+                                <i class="bi bi-check-circle"></i> Ekle
+                            </button>
+                            <a asp-action="Index" asp-controller="Home" asp-area="" class="btn btn-primary-outline me-1 mb-1">
+                                <i class="bi bi-x-circle"></i> Vazgeç
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
